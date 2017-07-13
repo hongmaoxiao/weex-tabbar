@@ -16,7 +16,7 @@
 						icon: '',
 						image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
 						selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
-						src: '/content.js',
+						src: '/content1.js',
 						visibility: 'visible',
 					},
 					{
@@ -26,7 +26,7 @@
 						icon: '',
 						image: 'http://gtms03.alicdn.com/tps/i3/TB1LEn9MpXXXXaUXpXX9t7RGVXX-46-46.png',
 						selectedImage: 'http://gtms02.alicdn.com/tps/i2/TB1qysbMpXXXXcnXXXX9t7RGVXX-46-46.png',
-						src: '/content.js',
+						src: '/content2.js',
 						visibility: 'hidden',
 					},
 					{
@@ -36,14 +36,14 @@
 						icon: '',
 						image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
 						selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
-						src: '/content.js',
+						src: '/content3.js',
 						visibility: 'hidden',
 					}
 				],
 			}
 		},
 		components: {
-			oscTabbar: require('./include/tabbar.vue')
+			oscTabbar: typeof(window) == 'undefined' ? require('./include/tabbar.vue') : require('./include/tabbar-web.vue')
 		},
 		created: function() {
 			for(var i = 0; i < this.tabItems.length; i++) {

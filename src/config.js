@@ -1,6 +1,7 @@
 export default {
 	js(url) {
 		var bundleUrl = weex.config.bundleUrl
+		bundleUrl = bundleUrl.substring(0, bundleUrl.lastIndexOf('/'))
 		if(typeof(window) == "undefined") {
 			while(url.startsWith('../')) {
 				url = url.substr(3)

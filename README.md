@@ -1,3 +1,11 @@
+## 怎么运行?
+```
+cnpm install
+./start
+```
+
+访问 http://localhost:12580/web
+
 ## 解决了 Weex Vue2.0 在H5 上tabbar embed无法正常显示的问题
 ### 在原版的基础上有此处修改
 1. 修改 ```web/index.html``` 设置了```body``` 的高度 使得```div``` 的 ```flex:1``` 能全屏

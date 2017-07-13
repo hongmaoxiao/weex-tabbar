@@ -1,3 +1,30 @@
+# EN
+### how to run ?
+```
+cnpm install
+./start
+```
+visit  http://localhost:12580/web
+
+
+## Fix Weex Vue 2.0 at HTML5 can't display embed
+### update points
+1. update  ```web/index.html``` set ```body``` height, let ```div``` ```flex:1``` can full screen
+1. update ```web/index.html``` set ```body``` ```margin:8px``` to ```0px```
+2. add ```tabbar-web.vue```, removed ```type``` , change ```visibility``` to  ```display```
+
+#### Now there are other issues to be resolved
+1. When display on HTML5 the top has 1px space
+2. There is a blank when the page is switched
+
+
+
+
+
+
+
+# 中文
+
 ## 怎么运行?
 ```
 cnpm install
@@ -14,4 +41,4 @@ cnpm install
 
 #### 目前还存在的一些问题,
 1. 在H5上的tabbar 内容会顶部 1px 的空隙 待修复
-2. H5 tabbar 切换 使用 ```display``` 替换 ```visibility``` 会导致切换时闪一下
+2. H5 tabbar 切换 使用 ```display``` 替换 ```visibility``` 会导致切换时闪一下, 出现空白

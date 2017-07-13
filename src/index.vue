@@ -43,7 +43,7 @@
 			}
 		},
 		components: {
-			oscTabbar: typeof(window) == 'undefined' ? require('./include/tabbar.vue') : require('./include/tabbar-web.vue')
+			oscTabbar: typeof(window) == 'undefined' ? require('./components/tabbar.vue') : require('./components/tabbar-web.vue')
 		},
 		created: function() {
 			for(var i = 0; i < this.tabItems.length; i++) {

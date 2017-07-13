@@ -1,22 +1,10 @@
 <template>
 	<div style="flex-direction: column;">
-		<tabbar :tabItems="tabItems" @tabBarOnClick="tabBarOnClick"></tabbar>
+		<osc-tabbar :tabItems="tabItems" @tabBarOnClick="tabBarOnClick"/>
 	</div>
 </template>
-
 <script>
-	var getURL = function(jsURL) {
-		var bundleUrl = new URL(weex.config.bundleUrl)
-		if(typeof(window) == 'undefined') {
-			return bundleUrl.origin + jsURL
-		} else {
-			if(jsURL.indexOf('?') == -1) {
-				jsURL += "?"
-			}
-			jsURL += "&t=" + new Date().getTime()
-			return bundleUrl.origin + "/web/?page=" + encodeURI(jsURL.replace('.js','.web.js'))
-		}
-	}
+	import config from './config'
 	module.exports = {
 		data: function() {
 			return {
@@ -28,7 +16,7 @@
 						icon: '',
 						image: 'http://gtms01.alicdn.com/tps/i1/TB1qw.hMpXXXXagXXXX9t7RGVXX-46-46.png',
 						selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB16jjPMpXXXXazXVXX9t7RGVXX-46-46.png',
-						src: '/dist/content.js?xx=a',
+						src: '/content.js',
 						visibility: 'visible',
 					},
 					{
@@ -38,7 +26,7 @@
 						icon: '',
 						image: 'http://gtms03.alicdn.com/tps/i3/TB1LEn9MpXXXXaUXpXX9t7RGVXX-46-46.png',
 						selectedImage: 'http://gtms02.alicdn.com/tps/i2/TB1qysbMpXXXXcnXXXX9t7RGVXX-46-46.png',
-						src: '/dist/content.js?xx=v',
+						src: '/content.js',
 						visibility: 'hidden',
 					},
 					{
@@ -48,20 +36,19 @@
 						icon: '',
 						image: 'http://gtms01.alicdn.com/tps/i1/TB1B0v5MpXXXXcvXpXX9t7RGVXX-46-46.png',
 						selectedImage: 'http://gtms04.alicdn.com/tps/i4/TB1NxY5MpXXXXcrXpXX9t7RGVXX-46-46.png',
-						src: '/dist/list.js',
+						src: '/content.js',
 						visibility: 'hidden',
 					}
 				],
 			}
 		},
 		components: {
-			tabbar: require('./components/include/tabbar.vue')
-//			tabbar: typeof(window) == 'undefined' ? require('./components/include/tabbar.vue') : require('./components/include/tabbar-web.vue')
+			oscTabbar: require('./include/tabbar.vue')
 		},
 		created: function() {
 			for(var i = 0; i < this.tabItems.length; i++) {
 				var tabItem = this.tabItems[i];
-				tabItem.src = getURL(tabItem.src)
+				tabItem.src = config.js(tabItem.src)
 				console.log(tabItem.src)
 			}
 		},

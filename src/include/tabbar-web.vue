@@ -9,14 +9,6 @@
 			</div>
 		</div>
 	</div>
-	<!--<div style="flex: 1;">
-		<div style="flex: 1;">
-			<embed v-for="(item , i) in tabItems" :src="item.src" :key="i" :style="{ display: item.visibility == 'visible' ? '':'none'}"></embed>
-		</div>
-		<div style="flex-direction: row; align-items: center; justify-content: space-around; flex: 1;">
-			<tabitem v-for="item in tabItems" :ref="'tabitem' + item.index" :key="item.index" :index="item.index" :icon="item.icon" :title="item.title" :titleColor="item.titleColor" @tabItemOnClick="tabItemOnClick"></tabItem>
-		</div>
-	</div>-->
 </template>
 <script>
 	module.exports = {
